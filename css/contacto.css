@@ -1,0 +1,142 @@
+/* ===== Reset básico ===== */
+* {
+    box-sizing: border-box;
+}
+
+/* ===== Fondo ===== */
+body {
+    margin: 0;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top left, #0f172a, #1e293b 60%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* ===== Tarjeta ===== */
+.contact-form {
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+    position: relative;
+    animation: fadeIn 0.7s ease;
+}
+
+/* Detalle decorativo */
+.contact-form::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(135deg, #3b82f6, #06b6d4, #6366f1);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude;
+	pointer-events: none;
+}
+
+/* Título */
+.contact-form h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 26px;
+    color: #0f172a;
+}
+
+/* Labels  */
+.contact-form label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #334155;
+    margin-bottom: 6px;
+    display: block;
+}
+
+/*  Inputs  */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    font-size: 14px;
+    transition: 0.25s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    background: #ffffff;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: none;
+}
+
+/*  reCAPTCHA  */
+.form-field {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+/*  Botón Enviar  */
+#btn1 {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+    margin-bottom: 12px;
+}
+
+#btn1:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.35);
+}
+
+#btn1:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Botón Regresar  */
+.btn-home {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #1e293b;
+    background: #e2e8f0;
+    transition: 0.3s ease;
+}
+
+.btn-home:hover {
+    background: #cbd5e1;
+    transform: translateY(-2px);
+}
+
+/* Animación */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}

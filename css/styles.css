@@ -1,0 +1,350 @@
+/* Global Styles */
+:root {
+    --bg-color: #fdfcf0; /* Cream/Beige light */
+    --text-color: #333;
+    --accent-color: #d9534f; /* Red for pins/accents */
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Lato', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: var(--font-serif);
+}
+
+a {
+    transition: all 0.3s ease;
+}
+
+/* Header */
+.site-header {
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background:#ffffff;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.desktop-nav a {
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.desktop-nav a:hover,
+.desktop-nav a.active {
+    font-weight: 700;
+    text-decoration: underline !important;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--bg-color);
+    z-index: 1050;
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+.mobile-menu a {
+    font-size: 2rem;
+    color: var(--text-color);
+    text-decoration: none;
+    font-family: var(--font-serif);
+    margin: 15px 0;
+    display: block;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 3rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Vertical Text */
+.vertical-text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: left center;
+    white-space: nowrap;
+    z-index: 10;
+    margin-left: 20px; /* Adjust based on design */
+    font-family: var(--font-serif);
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #888;
+}
+
+/* Gallery Grid */
+.gallery-wrapper {
+    padding: 0 5%; /* Spacing for the vertical text */
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3/4; /* Standardize vertical feel */
+    background: #eee;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: #fff;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+/* Places Grid Small */
+.places-grid-small {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.place-card .img-wrapper {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.place-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.mobile-menu-btn span {
+    display: inline-block;
+    width: 30px;
+    height: 2px;
+    background-color: #000;
+    position: relative;
+}
+
+.mobile-menu-btn span::before,
+.mobile-menu-btn span::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background-color: #000;
+    left: 0;
+}
+
+.mobile-menu-btn span::before {
+    top: -8px;
+}
+
+.mobile-menu-btn span::after {
+    top: 8px;
+}
+
+
+
+
+/* Tablet (max-width 991px) */
+@media (max-width: 991px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile (max-width 576px) */
+@media (max-width: 576px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .places-grid-small {
+        grid-template-columns: 1fr;
+    }
+    
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .gallery-wrapper {
+        padding: 0 15px;
+    }
+}
+
+
+
+/* Para que en celulares se vea uno debajo de otro */
+@media (max-width: 600px) {
+    .footer-contenido {
+        flex-direction: column;
+        text-align: center;
+    }
+    .bloque-derecho {
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
+.comentarios-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.comentarios-container h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.comentarios-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.comentarios-container input,
+.comentarios-container textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.comentarios-container button {
+    background-color: #198754;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comentarios-container button:hover {
+    background-color: #157347;
+}
+
+/*footer*/
+
+/* Footer */
+.site-footer {
+    background-color: #ffffff;
+    border-top: 1px solid rgba(0,0,0,0.08);
+    margin-top: 80px;
+    font-family: var(--font-sans);
+}
+
+.footer-contenido {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 50px 20px;
+}
+
+.footer-bloque {
+    flex: 1;
+}
+
+.footer-bloque h4 {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.footer-bloque p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+.footer-bloque ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-bloque ul li {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.footer-bloque ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.footer-bloque ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-copy {
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 15px 10px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    color: #777;
+}
+

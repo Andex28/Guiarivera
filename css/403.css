@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.error-404 {
+    min-height: 100vh;
+
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0.65)
+    ),
+    url("./assets/Error403.jfif")
+    center / cover no-repeat;
+
+    color: #ffffff;
+}
+
+.code {
+    font-size: 9rem;
+    font-weight: 800;
+    letter-spacing: 5px;
+}
+
+.title {
+    font-size: 2.2rem;
+    margin-top: -10px;
+}
+
+.message {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    color: #dddddd;
+}
+
+.btn-primary {
+    padding: 0.6rem 2.2rem;
+    font-size: 1.1rem;
+}
+
+

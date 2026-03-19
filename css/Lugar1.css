@@ -1,0 +1,88 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 70px;
+}
+
+.hero {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+    ),
+    url("https://images.unsplash.com/photo-1582719478250-c89cae4dc85b")
+    center / cover no-repeat;
+    
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.section-title {
+    color: #0d6efd;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+
+.video-container {
+    display: flex;
+    justify-content: center;
+}
+
+.comentarios-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.comentarios-container h3 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.comentarios-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.comentarios-container input,
+.comentarios-container textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.comentarios-container button {
+    background-color: #198754;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comentarios-container button:hover {
+    background-color: #157347;
+}
+
+/* Footer */
+.footer {
+    background-color: #0d6efd;
+    color: white;
+    padding: 1.5rem 0;
+}
